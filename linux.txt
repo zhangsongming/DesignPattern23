@@ -1,0 +1,82 @@
+touch:
+
+
+1) touch helo\ world
+   touch "hello world"
+
+2) touch -- -t(-- is option)
+   rm -- -t
+   touch ./-t
+   rm ./-t
+
+3)touch $MYFILE($ is varity) 
+
+
+
+shell 赋值
+   在shell中用$符号定义变量，在使用使直接赋值
+eg:   echo $1 $2 $3
+     ./.sh  (变量1的值) （变量2的值） （变量3的值）
+   当变量$1-9不够用时可以用shift把后面的变量转移到前面
+      echo $1
+      shift
+      echo $1
+      shift
+      echo $1
+
+read 命令接收键盘的输入和其他文件的输入，得到输入后把值放入对应的变量中
+（echo 命令默认是换行的，-n表示不用换行）
+exit 0 退出shell命令
+read [option] -t(计时输入) 
+
+
+test命令的使用：可以判断 （表达式的判断，字符串的判断，数字比较，文件比较）
+shell中[]也表示test的意思
+eg：if[who|wc -l 0eq 1]
+
+linux 中的case esac用法：
+case $变量名 in
+模式1）
+命令序列1;;
+模式2）
+命令序列2;;
+*)
+默认执行的命令序列;;
+esac
+
+
+
+awk：是一个非常强大的文本分析工具。相对于grep的查找，sed的编辑。awk在其对数据分析并生成报告的时候，显得
+尤为强大，简单说awk就是把文件逐行读入，以空格为默认的分隔符。切开的部分在进行各种分析处理
+awk
+'
+
+{pattern + action}
+'
+{filenames}
+pattern表示AWK在数据中查找的内容，而action在找到匹配内容时所执行的一系列命令。花括号表示根据特定的
+模式对一系列的指令进行分组。pattern表示的正则表达式，用斜杠括起来
+
+
+
+建立软连接  
+ ln -s a c
+
+eg:     sed -n '//p' files
+
+eg:     sed -n '4,10p' files
+
+
+
+ls -l /etc|sed -n '/^d/p'
+
+ls -l /etc|awk '{print $5}'|sort -k(列数)n(数字)
+
+rm : remove
+
+mkdir: make direction
+
+rmdir；remove direction
+
+ps: process status
+
